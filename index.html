@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>💹 Cryptocurrency Dashboard</header>
+
+    <main>
+      <section id="price-section">
+        <h2>Live Prices</h2>
+        <div id="crypto-table"></div>
+      </section>
+
+      <section id="chart-section">
+        <h2>Bitcoin Price Chart</h2>
+        <canvas id="pricechart"></canvas>
+      </section>
+
+      <section id="portfolio-section">
+        <h2>Portfolio Calculator</h2>
+        <input type="text" id="coinInput" placeholder="Enter coin (eg. Bitcoin)" />
+        <input type="number" id="amountInput" placeholder="Amount Owned" />
+        <button id="addCoin">Add to Porfolio</button>
+        <div id="portfolio"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Powered by CoinGecko API</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
