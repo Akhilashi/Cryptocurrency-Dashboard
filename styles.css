@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #38bdf8;
+}
+
+section {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#crypto-tABle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.coin {
+  background: #334155;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 150px;
+}
+
+input,
+button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  background: #38bdf8;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7dd3fc;
+}
