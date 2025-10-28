@@ -43,6 +43,12 @@ section {
   width: 150px;
 }
 
+.coin img {
+  border-radius: 50%;
+  background-color: #1e293b;
+  padding: 8px;
+}
+
 input,
 button {
   padding: 10px;
@@ -55,6 +61,12 @@ button {
   background: #38bdf8;
   color: #0f172a;
   cursor: pointer;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
 }
 
 button:hover {
