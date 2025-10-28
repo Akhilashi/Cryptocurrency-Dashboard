@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cryptocurrency Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
@@ -13,12 +13,12 @@
     <main>
       <section id="price-section">
         <h2>Live Prices</h2>
-        <div id="crypto-table"></div>
+        <div id="crypto-table" class="crypto-grid"></div>
       </section>
 
       <section id="chart-section">
         <h2>Bitcoin Price Chart</h2>
-        <canvas id="pricechart"></canvas>
+        <canvas id="priceChart"></canvas>
       </section>
 
       <section id="portfolio-section">
@@ -34,6 +34,6 @@
       <p>Powered by CoinGecko API</p>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

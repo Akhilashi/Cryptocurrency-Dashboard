@@ -12,10 +12,10 @@ function displayCrypto(data) {
   data.forEach((coin) => {
     const div = document.createElement("div");
     div.classList.add("coin");
-    div.innerHTML = `<img src="${coin.image}" width="40">
-        <h3>${coin.image}</h3>
-        <p>$${coin.current_price.toLocaleString()}</p>
-        <p> style="color:${coin.price_change_percentage_24h >= 0 ? "lightgreen" : "red"}>
+    div.innerHTML = `<img src="${coin.image}" alt="${coin.name}" width="40" height="40"/>
+        <h3>${coin.name}</h3>
+        <p class="price">$${coin.current_price.toLocaleString()}</p>
+        <p class="change" style="color:${coin.price_change_percentage_24h >= 0 ? "lightgreen" : "red"}>
         ${coin.price_change_percentage_24h.toFixed(2)}%</p>`;
 
     container.appendChild(div);
@@ -53,9 +53,41 @@ async function drawChart() {
     },
     options: {
       scales: {
-        y: { beginAtZero: flase },
+        y: { beginAtZero: false },
       },
     },
   });
 }
 drawChart();
+
+const portfolio = {};
+
+document.getElementById("addCoin").addEventListener("click", async () => {
+  const coin = document.getElementById("coinInput").ariaValueMax.toLowerCase();
+  const amount = parseFloat(document.getElementById("amountInput").value);
+
+  if (!coin || isNaN(amount)) return alert("Enter valid coin and amount");
+
+  const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin}&vs_currencies=usd`);
+  const data = await res.json();
+
+  if (!data[coin]) return alert("Coin not found");
+
+  const value = data[coin].usd * amount;
+  portfolio[coin] = { amount, value };
+
+  displayportfolio();
+});
+
+function displayportfolio() {
+  const container = document.getElementById("portfolio");
+  container.innerHTML = "";
+  let total = 0;
+
+  for (const [coin, info] of Object.entries(portfolio)) {
+    total += info.value;
+    container.innerHTML += `<p>${coin.toUpperCase()}: $${info.value.toFixed(2)}</p>`;
+  }
+
+  container.innerHTML += `<hr><p><strong>Total Portfolio: $${total.toFixed(2)}</strong></p>`;
+}
