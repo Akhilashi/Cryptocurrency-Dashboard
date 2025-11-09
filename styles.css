@@ -63,6 +63,42 @@ button {
   cursor: pointer;
 }
 
+#crypto-tabs {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.tab-btn {
+  background: #222;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-btn.active {
+  background: #00bcd4;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.coin-info img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
 .crypto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));

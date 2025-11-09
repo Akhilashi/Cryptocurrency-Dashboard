@@ -18,7 +18,9 @@
 
       <section id="chart-section">
         <h2>Bitcoin Price Chart</h2>
-        <canvas id="priceChart"></canvas>
+        <div class="tab-buttons" id="tab-buttons"></div>
+        <div class="tab-content" id="tab-content"></div>
+        <!-- <canvas id="priceChart"></canvas> -->
       </section>
 
       <section id="portfolio-section">
@@ -34,10 +36,6 @@
       <p>Powered by CoinGecko API & Goldapi.io</p>
     </footer>
 
-    <script src="./components/fetchCryptoData.js"></script>
-    <script src="./components/drawChart.js"></script>
-    <!-- <script src="./components/fetchGoldData.js"></script> -->
-    <script src="./components/portfolio.js"></script>
-    <script src="./components/main.js"></script>
+    <script type="module" src="./components/main.js"></script>
   </body>
 </html>
